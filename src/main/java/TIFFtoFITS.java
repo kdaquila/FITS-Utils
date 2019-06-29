@@ -3,10 +3,6 @@ import ij.io.FileInfo;
 import ij.io.ImageReader;
 import ij.io.Opener;
 import ij.io.TiffDecoder;
-import nom.tam.fits.Fits;
-import nom.tam.fits.FitsException;
-import nom.tam.fits.FitsFactory;
-import nom.tam.util.BufferedFile;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -15,8 +11,8 @@ import java.io.InputStream;
 
 public class TIFFtoFITS {
 
-    String directoryName;
-    String fileName;
+    private final String directoryName;
+    private final String fileName;
     int nRows;
     int nCols;
     int nBands;
@@ -27,51 +23,6 @@ public class TIFFtoFITS {
         nRows = 0;
         nCols = 0;
         nBands = 3;
-    }
-
-    public static void main(String[] args) {
-        String dirname = "C:\\Users\\kfd18\\kfd18_Downloads\\Stack2";
-        String filename = "DSC_0001.TIF";
-        TIFFtoFITS app = new TIFFtoFITS(dirname, filename);
-
-        short[][] dataShorts_viaOpener = app.getRawData();
-
-        double[][] dataDoubles = app.convertShortToDouble2D(dataShorts_viaOpener);
-
-        double[][][] images = new double[app.nBands][app.nRows][app.nCols];
-        for (int band_num = 0; band_num < app.nBands; band_num++) {
-            images[band_num] = app.reshape1Dto2D(dataDoubles[band_num], app.nRows, app.nCols);
-        }
-
-        // Create the FITS data structure
-        Fits f = new Fits();
-//        for (int band_num = 0; band_num < app.nBands; band_num++) {
-//            try {
-//                double[][] image = images[band_num];
-//                BasicHDU basicHDU = FitsFactory.HDUFactory(image);
-//                f.addHDU(basicHDU);
-//            } catch (FitsException e) {
-//                e.printStackTrace();
-//                throw new RuntimeException(e.getMessage());
-//            }
-//        }
-        try {
-            f.addHDU(FitsFactory.HDUFactory(images));
-        } catch (FitsException e) {
-            throw new RuntimeException(e.getMessage());
-        }
-
-        // Save the FITS structure
-        String saveDirName = "C:\\Users\\kfd18\\kfd18_Downloads";
-        String saveFileName = "image.FITS";
-        try {
-            BufferedFile bf = new BufferedFile(saveDirName + "\\" + saveFileName, "rw");
-            f.write(bf);
-            bf.close();
-        } catch (FitsException | IOException e) {
-            throw new RuntimeException(e.getMessage());
-        }
-
     }
 
     public short[][] getRawData() {
