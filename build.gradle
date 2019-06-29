@@ -17,3 +17,12 @@ dependencies {
     compile group: 'gov.nasa.gsfc.heasarc', name: 'nom-tam-fits', version: '1.12.0'
     compile 'org.apache.commons:commons-io:1.3.2'
 }
+
+task customFatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'tifftofits.BatchApp'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}

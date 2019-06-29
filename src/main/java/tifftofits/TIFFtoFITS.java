@@ -1,3 +1,5 @@
+package tifftofits;
+
 import ij.ImagePlus;
 import ij.io.FileInfo;
 import ij.io.ImageReader;
@@ -84,7 +86,7 @@ public class TIFFtoFITS {
         return (short[][]) imageReader.readPixels(inputStream);
     }
 
-    public double[][] convertShortToDouble2D(short[][] inputs) {
+    public double[][] convertShort2DToDouble2D(short[][] inputs) {
         // Convert to 32-bit floats
         int dim1 = inputs.length;
         int dim2 = inputs[0].length;

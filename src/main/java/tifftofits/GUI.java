@@ -1,0 +1,34 @@
+package tifftofits;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class GUI extends JFrame {
+
+    JProgressBar progressBar;
+    JLabel label;
+    JPanel panel;
+
+
+    public GUI() {
+        super("TIFF to FITS");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        label = new JLabel("image name");
+        panel = new JPanel();
+        progressBar = new JProgressBar(0,100);
+        panel.add(progressBar);
+        getContentPane().add(BorderLayout.NORTH, label);
+        getContentPane().add(BorderLayout.SOUTH, panel);
+        add(panel);
+        pack();
+        setVisible(true);
+    }
+
+    public void updateProgressBar(int percent) {
+        progressBar.setValue(percent);
+    }
+
+    public void updateLabel(String name) {
+        label.setText(name);
+    }
+}
