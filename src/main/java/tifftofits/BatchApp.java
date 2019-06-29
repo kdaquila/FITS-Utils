@@ -27,7 +27,7 @@ public class BatchApp {
         } else {
             JFileChooser f = new JFileChooser();
             f.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-            f.setCurrentDirectory(new File(System.getProperty("user.dir")));
+            f.setCurrentDirectory(new File(System.getProperty("user.home")));
             int result = f.showOpenDialog(null);
             if (result == JFileChooser.APPROVE_OPTION) {
                 dirname = f.getSelectedFile().getAbsolutePath();
