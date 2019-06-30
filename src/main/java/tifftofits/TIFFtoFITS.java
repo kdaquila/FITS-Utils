@@ -27,6 +27,52 @@ public class TIFFtoFITS {
         nBands = 3;
     }
 
+    public double[][] getGrayImage() {
+        double redWt = 0.21;
+        double greenWt = 0.72;
+        double blueWt = 0.07;
+        return getGrayImage(redWt, greenWt, blueWt);
+    }
+
+    public double[][] getGrayImage(double redWt, double greenWt, double blueWt) {
+        // Get the data
+        short[][] dataShorts_viaOpener = getRawData();
+
+        // Convert to doubles
+        double[][] dataDoubles = convertShort2DToDouble2D(dataShorts_viaOpener);
+
+        // Compute the gray image
+        double[][] grayImage = new double[nRows][nCols];
+        for (int row_num = 0; row_num < nRows; row_num++) {
+            for (int col_num = 0; col_num < nCols; col_num++) {
+                int i = row_num*nCols + col_num;
+                double redValue = dataDoubles[0][i];
+                double greenValue = dataDoubles[0][i];
+                double blueValue = dataDoubles[0][i];
+                double grayValue = redWt*redValue + greenWt*greenValue + blueWt*blueValue;
+                grayImage[row_num][col_num] = grayValue;
+            }
+        }
+
+        return grayImage;
+    }
+
+    public double[][][] getRGBImageStack() {
+        // Get the data
+        short[][] dataShorts_viaOpener = getRawData();
+
+        // Convert to doubles
+        double[][] dataDoubles = convertShort2DToDouble2D(dataShorts_viaOpener);
+
+        // Build the rgb image stack
+        double[][][] images = new double[nBands][nRows][nCols];
+        for (int band_num = 0; band_num < nBands; band_num++) {
+            images[band_num] = reshape1Dto2D(dataDoubles[band_num], nRows, nCols);
+        }
+
+        return images;
+    }
+
     public short[][] getRawData() {
         return getRawData_viaImageReader();
     }

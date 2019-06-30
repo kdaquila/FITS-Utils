@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="317290f4-d4cd-45a7-a5b2-b1886d8ca20c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/tifftofits/BatchApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tifftofits/BatchApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tifftofits/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tifftofits/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tifftofits/TIFFtoFITS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tifftofits/TIFFtoFITS.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -67,8 +67,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tifftofits/BatchApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="29" column="72" selection-start-line="29" selection-start-column="72" selection-end-line="29" selection-end-column="72" />
+            <state relative-caret-position="394">
+              <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tifftofits/FITS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,20 +91,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tifftofits/TIFFtoFITS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            <state relative-caret-position="218">
+              <caret line="32" column="29" lean-forward="true" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2306#2307#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tifftofits/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="192">
+              <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#256#257#0" expanded="true" />
@@ -130,8 +143,10 @@
         <option value="$PROJECT_DIR$/src/main/java/TIFFtoFITS_BatchApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/tifftofits/TIFFtoFITS_BatchApp.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/tifftofits/BatchApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/tifftofits/GUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tifftofits/TIFFtoFITS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tifftofits/BatchApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tifftofits/FITS.java" />
       </list>
     </option>
   </component>
@@ -205,6 +220,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/ij.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -337,7 +353,7 @@
       <updated>1561740272630</updated>
       <workItem from="1561740273804" duration="2092000" />
       <workItem from="1561742943740" duration="29799000" />
-      <workItem from="1561832841332" duration="11577000" />
+      <workItem from="1561832841332" duration="13829000" />
     </task>
     <servers />
   </component>
@@ -347,7 +363,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43468000" />
+    <option name="totallyTimeSpent" value="45720000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -360,9 +376,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49716714" weight="0.18389262" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49716714" visible="true" weight="0.18389262" />
       <window_info id="Structure" order="1" sideWeight="0.5028329" side_tool="true" weight="0.20067114" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -529,36 +544,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tifftofits/TIFFtoFITS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tifftofits/BatchApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="29" column="72" selection-start-line="29" selection-start-column="72" selection-end-line="29" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tifftofits/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="192">
+          <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#256#257#0" expanded="true" />
             <element signature="e#282#283#0" expanded="true" />
             <element signature="e#613#614#0" expanded="true" />
             <element signature="e#644#645#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tifftofits/TIFFtoFITS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="32" column="29" lean-forward="true" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2306#2307#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tifftofits/BatchApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tifftofits/FITS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
