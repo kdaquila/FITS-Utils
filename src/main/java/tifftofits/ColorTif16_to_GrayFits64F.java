@@ -7,7 +7,7 @@ import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FilenameFilter;
 
-public class BatchApp {
+public class ColorTif16_to_GrayFits64F {
 
     public static void main(String[] args) {
 
@@ -74,12 +74,6 @@ public class BatchApp {
 
             // save the gray image data
             FITS.saveData(grayImage, dirname + "\\grayFITS", saveFileName);
-
-            // compute the rgb image data
-            double[][][] rgbImageStack = app.getRGBImageStack();
-
-            // save the rgb image data
-            FITS.saveData(rgbImageStack, dirname + "\\rgbFITS", saveFileName);
         }
 
         // Close the gui

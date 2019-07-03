@@ -20,7 +20,7 @@ dependencies {
 
 task customFatJar(type: Jar) {
     manifest {
-        attributes 'Main-Class': 'tifftofits.BatchApp'
+        attributes 'Main-Class': 'tifftofits.ColorTif16_to_GrayFits64F'
     }
     baseName = project.name + '-all'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
