@@ -73,7 +73,9 @@ public class ColorTif16_to_GrayFits64F {
             double[][] grayImage = app.getGrayImage();
 
             // save the gray image data
-            FITS.saveData(grayImage, dirname + "\\grayFITS", saveFileName);
+            String saveDir = FilenameUtils.getFullPathNoEndSeparator(dirname) + "\\FITS_64bitFloatGray";
+            System.out.println("Saving images to: " + saveDir);
+            FITS.saveData(grayImage, saveDir, saveFileName);
         }
 
         // Close the gui
